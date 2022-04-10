@@ -14,6 +14,13 @@ public class Util {
 
     public static double perimeter(Polygon polygon) {
         double polyPerimeter = 0.0;
+        for (int i = 0; i < polygon.getPoints().size(); i++) {
+            if (i == polygon.getPoints().size()-1) {
+                polyPerimeter += Math.sqrt(Math.pow(polygon.getPoints().get(i).getX() - polygon.getPoints().get(0).getX(), 2) + Math.pow(polygon.getPoints().get(i).getY() - polygon.getPoints().get(0).getY(), 2));
+            } else {
+                polyPerimeter += Math.sqrt(Math.pow(polygon.getPoints().get(i).getX() - polygon.getPoints().get(i+1).getX(), 2) + Math.pow(polygon.getPoints().get(i).getY() - polygon.getPoints().get(i+1).getY(), 2));
+            }
+        }
         return polyPerimeter;
     }
         

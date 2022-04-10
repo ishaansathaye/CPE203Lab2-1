@@ -5,6 +5,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.Arrays;
 import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -14,7 +15,18 @@ import org.junit.Test;
 
 public class PartOneTestCases
 {
+   
    public static final double DELTA = 0.00001;
+   
+   @Test
+   public void testPerimPoly() {
+        List < Point >points = new ArrayList < Point >(); 
+        points.add(new Point(0, 0));
+        points.add(new Point(3,0));
+        points.add(new Point(0,4));
+        double d = Util.perimeter(new Polygon(points));
+        assertEquals(12.0, d, DELTA);
+   }
 
    @Test
    public void testCircleImplSpecifics()
