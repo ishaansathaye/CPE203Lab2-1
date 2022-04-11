@@ -1,5 +1,3 @@
-package src;
-
 public class Util {
     
     public static double perimeter(Circle circle) {
